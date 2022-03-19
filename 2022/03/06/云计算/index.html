@@ -23,13 +23,16 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="前言emmm,这些知识仅个人笔记。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/FC-%E5%AD%98%E5%82%A8.jpg">
+<meta property="og:image" content="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/FC-VIMS.jpg">
+<meta property="og:image" content="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/FA%E5%85%A8%E6%99%AF%E5%9B%BE.png">
 <meta property="og:image" content="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/FA.jpg">
 <meta property="article:published_time" content="2022-03-06T00:04:06.000Z">
 <meta property="article:modified_time" content="1970-01-01T00:00:00.001Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="云计算">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/FA.jpg">
+<meta name="twitter:image" content="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/FC-%E5%AD%98%E5%82%A8.jpg">
   
   
   <title>云计算 - Hexo</title>
@@ -199,7 +202,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      9.3k 字
+      12k 字
     </span>
   
 
@@ -208,7 +211,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      78 分钟
+      96 分钟
     </span>
   
 
@@ -243,7 +246,7 @@
               <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>emmm,这些知识仅个人笔记。</p>
 <span id="more"></span>
 
-<h1 id="HCIA"><a href="#HCIA" class="headerlink" title="HCIA"></a>HCIA</h1><p>（hcia其实没什么好说的，无非就是一些基本的名词解释，实验是部署FC）<br>网络基础这边不再赘述，后面有时间写一期路由交换的博客</p>
+<h1 id="云计算及其基本概念"><a href="#云计算及其基本概念" class="headerlink" title="云计算及其基本概念"></a>云计算及其基本概念</h1><p>（hcia其实没什么好说的，无非就是一些基本的名词解释，实验是部署FC）<br>网络基础这边不再赘述，后面有时间写一期路由交换的博客</p>
 <h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>内部结构及其概念</p>
 <p>2U2路    其中U代表高度    1U=4.45厘米<br>                路代表cpu数量    </p>
 <p><strong>CPU</strong>        提供计算资源</p>
@@ -338,26 +341,16 @@
 <h3 id="KVM"><a href="#KVM" class="headerlink" title="KVM"></a>KVM</h3><p>物理资源由内核中的 KVM 模块进行虚拟化，KVM 模拟会把虚拟资源映射给上层设备使用（VM）<br>每台 VM 都各自有自己的操作系统（Guest OS）并且拥有 QUME 模块<br>当虚拟机需要获取物理资源时，Guest OS 会直接下发敏感指令，QUME 模块捕抓后进行二进制翻译，并且通过内核模块<br>交给主机操作系统模拟处理，主机操作系统可以通过驱动软件访问物理资源</p>
 <p>优点：虚拟化性能接近原生操作系统</p>
 <p>缺点：安全性较差，所有的虚拟机共享操作系统内核。</p>
-<h2 id="FC"><a href="#FC" class="headerlink" title="FC"></a>FC</h2><h3 id="CNA-（只能部署在物理服务器上）"><a href="#CNA-（只能部署在物理服务器上）" class="headerlink" title="CNA    （只能部署在物理服务器上）"></a>CNA    （只能部署在物理服务器上）</h3><p>​            UVP：对服务器资源进行虚拟化，是一个虚拟化软件<br>​            VNA：管理虚拟化资源（可以对虚拟化资源进行调用和配置）</p>
-<h3 id="VRM-（VRM-可以部署在-VM-之上，或者物理服务器）"><a href="#VRM-（VRM-可以部署在-VM-之上，或者物理服务器）" class="headerlink" title="VRM    （VRM 可以部署在 VM 之上，或者物理服务器）"></a>VRM    （VRM 可以部署在 VM 之上，或者物理服务器）</h3><p>​            可以对 CNA 主机进行统一管理<br>​            可以进行对 CNA 主机集群管理<br>​            修改用户权限<br>​            通过该平台分配资源等</p>
-<h3 id="CPU虚拟化"><a href="#CPU虚拟化" class="headerlink" title="CPU虚拟化"></a>CPU虚拟化</h3><p>上面的虚拟化部分</p>
-<h3 id="内存虚拟化"><a href="#内存虚拟化" class="headerlink" title="内存虚拟化"></a>内存虚拟化</h3><p><strong>内存大页</strong>：支持 2M 的内存页，内存页越大所需要描述的内存页表就越少，寻找内存地址的时候就越快</p>
-<p><strong>MMU</strong>：把虚拟内存地址映射给物理内存地址的工具（例如：使用 HVA 地址，需要把地址中的映射和索引关系，找到物理内存地址的具体位置）<br>             如果使用物理内存地址之前，每一次都需要这样寻址，会很耗费计算资源，所以就使用 TLB 来进行记录</p>
-<p><strong>TLB</strong>：缓存虚拟内存地址和物理内存地址映射关系的表格。当应用使用物理内存时，就先通过 TLB 中寻找对应记录，如果有则直接映射<br>            如果没有（未击中 TLB）则会通过 MMU 重新进行映射</p>
-<p><strong>影子页表</strong>：用于记录 GVA 的映射关系以及 HPA 的映射关系，使得虚拟机可以通过影子页表来找到物理主机的 HPA（GVA &gt; HPA）<br>            大大减少了 MMU 的查找时间，提升性能<br>            优点：提升了内存虚拟化的转换效率，提高了新能<br>            缺点：影子页表占用大量的内存空间（存放于内存的 Cache 中）因为这个问题，影子页表也在淘汰的边缘</p>
-<p><strong>EPT（扩展页表）</strong>：是由 Inter 支持的技术，可以将 GVA &gt; GPA &gt; HPA 的关系进行内存转换。实现硬件支持内存虚拟化的功能</p>
-<p><strong>超大内存页</strong>：内存大页可以支持 2M — 1G 的内存页，1G 的是超大内存页。在特定场景下可以使用（大规格的虚拟机，以 T 的内存单位的设备）</p>
-<h4 id="内存复用"><a href="#内存复用" class="headerlink" title="内存复用"></a>内存复用</h4><p>多个虚拟机映射同一块内存空间，对该空间只有访问权限。（一般是未写入数据的剩余空间，填 0 操作）</p>
-<p>如果需要写入新的数据，则需要从物理内存中映射其他新的空间</p>
-<h4 id="内存置换"><a href="#内存置换" class="headerlink" title="内存置换"></a>内存置换</h4><p>把长时间没有访问的内存数据，写入到硬盘中，并释放这部分内存空间</p>
-<p>当需要访问这个数据的时候，又从硬盘重新提取出来并加载到内存中</p>
-<h4 id="内存气泡"><a href="#内存气泡" class="headerlink" title="内存气泡"></a>内存气泡</h4><p>例如有2台虚拟机，VM1 和 VM2 （VM1 占用的内存较多，VM2 占用的内存较少）内存气泡，会把 VM2 的空闲内存通过气泡</p>
-<h3 id="I-O模拟"><a href="#I-O模拟" class="headerlink" title="I/O模拟"></a>I/O模拟</h3><p>实现虚拟机共享有限的 I/O 资源，减少冲突问题</p>
-<p><strong>全虚拟化</strong>：通过 QEMU 模块完全模拟物理网卡的功能，提高给虚拟机（让虚拟机认为自己可以通过驱动来实现 I/O 访问）<br>            性能最差，但是兼容性好，不需要额外购买 I/O 资源</p>
-<p><strong>半虚拟化</strong>：通过虚拟机安装特殊的驱动（virtio）来实现对后端的交互，实现访问物理网卡的功能<br>            性能次之，但是需要特殊的驱动（有可能导致无法兼容，而无法实现 I/O 虚拟化）<br><strong>I/O 独享</strong>：直接通过 VT-d 来把 PCIe 插槽映射给虚拟机使用，在通过插入物理网卡来支持虚拟机的访问<br>            使得虚拟机使用网卡时，与物理主机使用网卡一样<br>            性能最好，不需要进行虚拟化（独占一个 PCIe 插槽，主板插槽有限。外置 I/O 设备需要额外购买，成本较高）</p>
-<h1 id="HCIP"><a href="#HCIP" class="headerlink" title="HCIP"></a>HCIP</h1><h2 id="FusionSphere"><a href="#FusionSphere" class="headerlink" title="FusionSphere"></a>FusionSphere</h2><p>单虚拟化场景    只使用 FusionCompute 来提服务器虚拟化，的应用场景。满足企业日常业务需求</p>
-<p>多虚拟化场景    使用（FusionCompute + vphere） 来提供服务器虚拟化功能，并结合 FusionManager 来进行纳管的场景</p>
-<p>私有云场景    （FusionCompute + FusionAccess + VPC）方案来实现私有云应用场景</p>
+<h1 id="华为云组件"><a href="#华为云组件" class="headerlink" title="华为云组件"></a>华为云组件</h1><h2 id="FusionSphere"><a href="#FusionSphere" class="headerlink" title="FusionSphere"></a><strong>FusionSphere</strong></h2><p><strong>FusionSphere</strong>（虚拟化套件）包含：<br>            FusionCompute（融合计算）<br>            FusionManager（VM管理）<br>            eBackup（VM备份）<br>            UltraVR（灾备）<br>    下面将单独列出来</p>
+<p>应用场景：</p>
+<ol>
+<li><p>单虚拟化场景    只使用 FusionCompute 来提服务器虚拟化，的应用场景。满足企业日常业务需求</p>
+</li>
+<li><p>多虚拟化场景    使用（FusionCompute + vphere） 来提供服务器虚拟化功能，并结合 FusionManager 来进行纳管的场景</p>
+</li>
+<li><p>私有云场景    （FusionCompute + FusionAccess + VPC）方案来实现私有云应用场景</p>
+</li>
+</ol>
 <h3 id="集群管理"><a href="#集群管理" class="headerlink" title="集群管理"></a>集群管理</h3><h4 id="虚拟机-HA（高可靠性）"><a href="#虚拟机-HA（高可靠性）" class="headerlink" title="虚拟机 HA（高可靠性）"></a>虚拟机 HA（高可靠性）</h4><p>作用：当虚拟机所在的主机故障时，虚拟机能够迁移到其他主机上快速拉起<br>            减少故障中断的时间，避免业务无法继续使用</p>
 <h4 id="虚拟机热迁移"><a href="#虚拟机热迁移" class="headerlink" title="虚拟机热迁移"></a>虚拟机热迁移</h4><p>作用：在不影响用户使用的情况下，进行虚拟机迁移<br>            可以结合例如（DRS、DPM 来减轻设备的负担，和绿色节能）</p>
 <ol>
@@ -369,7 +362,49 @@
 </ol>
 <h4 id="DRS（动态资源调度）"><a href="#DRS（动态资源调度）" class="headerlink" title="DRS（动态资源调度）"></a>DRS（动态资源调度）</h4><p>作用：实现 FusionCompute 平台中的集群 CNA 能够进行负载均衡，削峰填谷（减少 CNA 主机之间负载失衡的问题）</p>
 <h4 id="DPM（分布式电源管理）"><a href="#DPM（分布式电源管理）" class="headerlink" title="DPM（分布式电源管理）"></a>DPM（分布式电源管理）</h4><p>作用：根据用户的使用程度，来进行虚拟机的迁移（与 DRS 类似，可以对虚拟机进行调度）</p>
-<h4 id="IMC"><a href="#IMC" class="headerlink" title="IMC"></a>IMC</h4><p>作用：可以把虚拟机迁移到不同的 CNA 主机上工作（CNA 主机的 CPU 代数可以不一样，要是要兼容高&gt;低）</p>
+<h4 id="IMC（跨cpu迁移）"><a href="#IMC（跨cpu迁移）" class="headerlink" title="IMC（跨cpu迁移）"></a>IMC（跨cpu迁移）</h4><p>作用：可以把虚拟机迁移到不同的 CNA 主机上工作（CNA 主机的 CPU 代数可以不一样，要是要兼容高&gt;低）</p>
+<h3 id="规则组"><a href="#规则组" class="headerlink" title="规则组"></a>规则组</h3><p>聚集虚拟机            列出的虚拟机必须在同一主机上运行</p>
+<p>互斥虚拟机            列出的虚拟机必须在不同主机上运行</p>
+<p>虚拟机到主机        虚拟机组的成员是否能在特定特定的成员上运行</p>
+<h2 id="FC-Fusioncompute"><a href="#FC-Fusioncompute" class="headerlink" title="FC    Fusioncompute"></a>FC    Fusioncompute</h2><h3 id="CNA-（只能部署在物理服务器上）"><a href="#CNA-（只能部署在物理服务器上）" class="headerlink" title="CNA    （只能部署在物理服务器上）"></a>CNA    （只能部署在物理服务器上）</h3><p>​            UVP：对服务器资源进行虚拟化，是一个虚拟化软件<br>​            VNA：管理虚拟化资源（可以对虚拟化资源进行调用和配置）</p>
+<h3 id="VRM-（VRM-可以部署在-VM-之上，或者物理服务器）"><a href="#VRM-（VRM-可以部署在-VM-之上，或者物理服务器）" class="headerlink" title="VRM    （VRM 可以部署在 VM 之上，或者物理服务器）"></a>VRM    （VRM 可以部署在 VM 之上，或者物理服务器）</h3><p>​            可以对 CNA 主机进行统一管理<br>​            可以进行对 CNA 主机集群管理<br>​            修改用户权限<br>​            通过该平台分配资源等</p>
+<h3 id="CPU虚拟化"><a href="#CPU虚拟化" class="headerlink" title="CPU虚拟化"></a>CPU虚拟化</h3><p>上面的虚拟化部分<br>FC使用的是KVM</p>
+<h3 id="内存虚拟化"><a href="#内存虚拟化" class="headerlink" title="内存虚拟化"></a>内存虚拟化</h3><p><strong>内存大页</strong>（THB）：支持 2M 的内存页，内存页越大所需要描述的内存页表就越少，寻找内存地址的时候就越快</p>
+<p><strong>MMU</strong>：把虚拟内存地址映射给物理内存地址的工具（例如：使用 HVA 地址，需要把地址中的映射和索引关系，找到物理内存地址的具体位置）<br>             如果使用物理内存地址之前，每一次都需要这样寻址，会很耗费计算资源，所以就使用 TLB 来进行记录</p>
+<p><strong>TLB</strong>：缓存虚拟内存地址和物理内存地址映射关系的表格。当应用使用物理内存时，就先通过 TLB 中寻找对应记录，如果有则直接映射<br>            如果没有（未击中 TLB）则会通过 MMU 重新进行映射</p>
+<p><strong>影子页表</strong>：用于记录 GVA 的映射关系以及 HPA 的映射关系，使得虚拟机可以通过影子页表来找到物理主机的 HPA（GVA &gt; HPA）<br>            大大减少了 MMU 的查找时间，提升性能<br>            优点：提升了内存虚拟化的转换效率，提高了新能<br>            缺点：影子页表占用大量的内存空间（存放于内存的 Cache 中）因为这个问题，影子页表也在淘汰的边缘</p>
+<p><strong>EPT（扩展页表）</strong>：是由 Inter 支持的技术，可以将 GVA &gt; GPA &gt; HPA 的关系进行内存转换。实现硬件支持内存虚拟化的功能</p>
+<p><strong>超大内存页</strong>：内存大页可以支持 2M — 1G 的内存页，1G 的是超大内存页。在特定场景下可以使用（大规格的虚拟机，以 T 的内存单位的设备）</p>
+<h4 id="内存复用"><a href="#内存复用" class="headerlink" title="内存复用"></a>内存复用</h4><p>多个虚拟机映射同一块内存空间，对该空间只有访问权限。（一般是未写入数据的剩余空间，填 0 操作）</p>
+<p>如果需要写入新的数据，则需要从物理内存中映射其他新的空间</p>
+<h4 id="内存置换"><a href="#内存置换" class="headerlink" title="内存置换"></a>内存置换</h4><p>把长时间没有访问的内存数据，写入到硬盘中，并释放这部分内存空间，当需要访问这个数据的时候，又从硬盘重新提取出来并加载到内存中</p>
+<h4 id="内存气泡"><a href="#内存气泡" class="headerlink" title="内存气泡"></a>内存气泡</h4><p>例如有2台虚拟机，VM1 和 VM2 （VM1 占用的内存较多，VM2 占用的内存较少）内存气泡，会把 VM2 的空闲内存通过气泡</p>
+<h3 id="I-O模拟"><a href="#I-O模拟" class="headerlink" title="I/O模拟"></a>I/O模拟</h3><p>实现虚拟机共享有限的 I/O 资源，减少冲突问题</p>
+<p><strong>全虚拟化</strong>：通过 QEMU 模块完全模拟物理网卡的功能，提高给虚拟机（让虚拟机认为自己可以通过驱动来实现 I/O 访问）<br>            性能最差，但是兼容性好，不需要额外购买 I/O 资源</p>
+<p><strong>半虚拟化</strong>：通过虚拟机安装特殊的驱动（virtio）来实现对后端的交互，实现访问物理网卡的功能<br>            性能次之，但是需要特殊的驱动（有可能导致无法兼容，而无法实现 I/O 虚拟化）<br><strong>I/O 独享</strong>：直接通过 VT-d 来把 PCIe 插槽映射给虚拟机使用，在通过插入物理网卡来支持虚拟机的访问<br>            使得虚拟机使用网卡时，与物理主机使用网卡一样<br>            性能最好，不需要进行虚拟化（独占一个 PCIe 插槽，主板插槽有限。外置 I/O 设备需要额外购买，成本较高）</p>
+<h3 id="网络虚拟化"><a href="#网络虚拟化" class="headerlink" title="网络虚拟化"></a>网络虚拟化</h3><p>Linux Bridge（网桥）：工作于二层的虚拟网络设备，类似交换机</p>
+<p>OVS（Open vSwitch）：开源的虚拟的交换机</p>
+<p>DVS（分布式交换机）：类似于物理交换机，但是在和物理设备之间链接了一层虚拟交换机</p>
+<p>EVS（Elastic Virtual Switch）：基于OVS，提升了其IO性能的一种弹性化虚拟交换。</p>
+<p><strong>华为的分布式交换机</strong>技术基于OVS，物理交换机一样，不同的网络平面间通过VLAN进行隔离</p>
+<p>普通模式(上行链路所关联的主机物理网卡为普通网卡。)</p>
+<p>SR-IOV直通模式(上行链路使用SRIOV直通网卡时选择该模式。)</p>
+<p>用户态交换模式(上行链路使用的网口所使用的驱动模式必须为用户态驱动模式。)</p>
+<h3 id="存储虚拟化"><a href="#存储虚拟化" class="headerlink" title="存储虚拟化"></a>存储虚拟化</h3><p>支持nas、san、FS、本地等存储资源</p>
+<p><img src="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/FC-%E5%AD%98%E5%82%A8.jpg" srcset="/img/loading.gif" lazyload></p>
+<h4 id="VIMS（虚拟集群存储文件系统）"><a href="#VIMS（虚拟集群存储文件系统）" class="headerlink" title="VIMS（虚拟集群存储文件系统）"></a>VIMS（虚拟集群存储文件系统）</h4><p><img src="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/FC-VIMS.jpg" srcset="/img/loading.gif" lazyload></p>
+<h5 id="VIMS-DLM分布式锁"><a href="#VIMS-DLM分布式锁" class="headerlink" title="VIMS DLM分布式锁"></a>VIMS DLM分布式锁</h5><p>VIMS会被多个CNA所使用，为了保证文件一致性和安全性，提出锁的概念，也就是多个master对应多个锁</p>
+<h5 id="VIMS-心跳"><a href="#VIMS-心跳" class="headerlink" title="VIMS 心跳"></a>VIMS 心跳</h5><p>分为网络心跳和硬盘心跳</p>
+<h4 id="磁盘技术"><a href="#磁盘技术" class="headerlink" title="磁盘技术"></a>磁盘技术</h4><p>​        普通磁盘<br>​        普通延迟置零磁盘<br>​        精简磁盘<br>​        差分磁盘</p>
+<p>从数据安全性上又划分为：<br>        持久化<br>        非持久化</p>
+<h4 id="快照"><a href="#快照" class="headerlink" title="快照"></a>快照</h4><h2 id="FusionStorage"><a href="#FusionStorage" class="headerlink" title="FusionStorage"></a>FusionStorage</h2><h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><p>FSM（FusionStorage Manager）：FusionStorage管理模块，提供告警、监控、日志、配置等操作维护功能。可支持物理服务器或者虚拟机部署，一般情况下FSM主备虚拟机部署。</p>
+<p>FSA（FusionStorage Agent）：代理进程，部署在各节点上，实现各节点与FSM通信。FSA包含MDC、VBS和OSD等不同的进程。根据系统不同配置要求，分别在不同的节点上启用不同的进程组合来完成特定的功能。</p>
+<p>MDC:Metadata Controller，为元数据控制组件，实现对分布式集群的状态控制，以及控制数据分布规则、数据重建规则等。<br>        分为控制集群和存储集群。<br>        ZK（分布式服务框架）：可以存储在系统分区和磁盘。MDC主备管理、数据存储、数据同步。</p>
+<p>VBS:Virtual Block Service，VBS通过SCSI或iSCSI接口提供分布式存储接入点服务，使应用服务器能够通过VBS访问分布式存储资源。</p>
+<p>OSD：Object Storage Service，其功能是监控硬盘状态，并处理VBS下发的IO消息，进行数据冗余保护并持久化到存储介质中。默认情况下一块硬盘对应一个OSD，假如采用一块容量为2.4T的SSD卡作为存储介质，此时只部署一个OSD对对接该SSD卡，会出现什么问题？会出现资源浪费的问题，如何解决该问题？可以通过部署多个OSD来充分发挥SSD卡的性能，比如部署6个OSD，每个OSD负责管理400GB的存储空间。</p>
+<p>EDS：Enterprise Data Service，提供快照、重删、复制等企业级特性的服务。加入存储池的服务器上会启动EDS进程。</p>
+<p>CM：Cluster Manager，集群管理进程，用于管理控制集群信息。当创建控制集群时，启动CM进程</p>
+<p>CCDB：Cluster Configuration Database，集群配置数据库，存储集群的配置信息（如双活Pair、远程复制Pair和一致性组信息）。</p>
 <h3 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h3><h4 id="存储资源"><a href="#存储资源" class="headerlink" title="存储资源"></a>存储资源</h4><p>能够提供存储空间的物理服务器（例如：IP SAN 存储服务器）华为的：FusionStorage（分布式存储）、OceanStor， 存储资源不能直接给 CNA 主机去使用，需要进行存储空间的管理和划分。</p>
 <ol>
 <li>创建硬盘域（把硬盘集合在一起）</li>
@@ -388,7 +423,7 @@
 <p>普通延时置零：虚拟机在获取磁盘空间时，与申请的磁盘空间一致（立刻下发）需要时再写0</p>
 <p><strong>差分盘</strong>：基于源数据盘来进行创建，用于记录源数据盘中的差异数据或者增改数据。可以用于（快照、连接克隆等）</p>
 <p>差分盘    附属于母盘，（默认）差分盘不能脱离于母盘使用，可以用于保存（快照数据、链接克隆、作为独立-非持久盘的增量空间使用）</p>
-<h4 id="快照"><a href="#快照" class="headerlink" title="快照"></a>快照</h4><p>快照：可以记录虚拟机当前的状态，并通过快照文件保存（虚拟机的寄存器、内存数据、虚拟机的配置等）</p>
+<h4 id="快照-1"><a href="#快照-1" class="headerlink" title="快照"></a>快照</h4><p>快照：可以记录虚拟机当前的状态，并通过快照文件保存（虚拟机的寄存器、内存数据、虚拟机的配置等）</p>
 <p><strong>全量快照</strong>：类似于 RAID 1 ，把所有原盘文件进行镜像复制<br>            创建速度慢，占用空间大（快照恢复时间短）<br>            读写速度快，不需要同时读或者同时写入</p>
 <p><strong>差分快照</strong>：（相比于全量快照，创建速度快、占用空间较小）<br>            适合于对 IOPS 要求低，但是空间节省，利用率高</p>
 <p>ROW（写时重定向）：差分盘对于母盘重新定向读写（新的数据写入到差分盘，母盘改为只读）</p>
@@ -403,6 +438,8 @@
 <li>虚拟机获取差分磁盘的 I/O 权限（读写）并且把新的数据写入差分盘中，此时母盘也会使用 TAR 技术把数据迁移到 ROW 的差分盘中，当母盘数据迁移完成后。目的端的差分磁盘就获得了所有的数据（即：全量数据）<br>但是，差分盘不能独立于母盘使用，所以删除母盘前需要将差分盘修改为动态磁盘类型（即：把差分盘修改为精简磁盘或普通延迟置零磁盘）这时候目的磁盘才能独立使用</li>
 </ol>
 <h2 id="Fusionaccess"><a href="#Fusionaccess" class="headerlink" title="Fusionaccess"></a>Fusionaccess</h2><p>桌面云：使得办公模式从个人 PC 到云端桌面来进行使用</p>
+<p>VDI（Virtual Desktop Infrastructure）虚拟桌面架构<br>            特点：计算资源和数据在云端集中管理，集中运行，对硬件无特殊要求</p>
+<p>IDV（Intelligent Desktop Virtualizztion）智能桌面虚拟化<br>            特点：镜像集中管理，计算资源和数据在终端，集中管理，分散运行，需要硬件支持外带特性</p>
 <ol>
 <li>集中管理</li>
 <li>资源利用率高</li>
@@ -410,7 +447,7 @@
 <li>更安全、更可靠、支持高可靠性</li>
 </ol>
 <p>FA加入方式有四种<br>VNC、java、BDP、HDP</p>
-<h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><table>
+<h3 id="组件-1"><a href="#组件-1" class="headerlink" title="组件"></a>组件</h3><table>
 <thead>
 <tr>
 <th><strong>组件</strong></th>
@@ -421,17 +458,17 @@
 <tbody><tr>
 <td>HDC</td>
 <td>Huawei  Desktop Controller</td>
-<td>华为桌面控制器  <br />接收 ITA 下发的请求进行用户和桌面管理配置，提供两种管理绑定方式<br />专有模式）用户与虚拟机桌面  1:1  的方式进行绑定，用户对于桌面来说是专属使用的<br />静态多用户）用户与虚拟桌面 N:1 的方式进行绑定，多个用户固定对应一个桌面<br />动态池）用户与虚拟桌面 N:N 的方式进行绑定，N 个用户对应 N 个桌面<br />静态池）用户与虚拟桌面 N:N 的方式进行绑定，N 个用户对应 N 个桌面（在用户使用时，桌面 1:1 绑定）</td>
+<td>华为桌面控制器  <br /><br />虚拟桌面管理软件的核心组件，根据ITA发送的请求进行桌面组的管理、用户和虚拟桌面的关联管理，处理虚拟机登录的相关请求。接收 ITA 下发的请求进行用户和桌面管理配置，提供两种管理绑定方式<br />专有模式）用户与虚拟机桌面  1:1  的方式进行绑定，用户对于桌面来说是专属使用的<br />静态多用户）用户与虚拟桌面 N:1 的方式进行绑定，多个用户固定对应一个桌面<br />动态池）用户与虚拟桌面 N:N 的方式进行绑定，N 个用户对应 N 个桌面<br />静态池）用户与虚拟桌面 N:N 的方式进行绑定，N 个用户对应 N 个桌面（在用户使用时，桌面 1:1 绑定）</td>
 </tr>
 <tr>
 <td>LIC</td>
 <td>License</td>
-<td>授权管理  <br />与 FusionAccess 用户数和登陆数量有关，当登陆用户数量大于购买的 license 用户数量，新用户将无法登陆</td>
+<td>授权管理  <br /><br />License服务器是License的管理与发放系统，负责HDC的License管理与发放。<br />与 FusionAccess 用户数和登陆数量有关，当登陆用户数量大于购买的 license 用户数量，新用户将无法登陆</td>
 </tr>
 <tr>
 <td>ITA</td>
 <td>IT  Adapter</td>
-<td>IT资源适配管理  <br />用于接收用户请求为其分配桌面以及进行桌面绑定，还能为管理员提供虚拟机管理功能和桌面管理功能</td>
+<td>IT资源适配管理  <br />用于接收用户请求为其分配桌面以及进行桌面绑定，还能为管理员提供虚拟机管理功能和桌面管理功能<br />为用户管理虚拟机提供接口，其通过与HDC（Huawei Desktop Controller）的交互、以及与云平台软件FusionCompute的交互、实现虚拟机创建与分配、虚拟机状态管理、虚拟机模板管理、虚拟机系统操作维护功能。<br />虚拟机创建，发放，及日常维护都是通过ITA的portal进行。ITA调用HDC提供的接口。</td>
 </tr>
 <tr>
 <td>DB</td>
@@ -446,27 +483,27 @@
 <tr>
 <td>TCM</td>
 <td>Thin  Client Management</td>
-<td>瘦客户端管理</td>
+<td>瘦客户端管理<br />TCM为升腾曦帆桌面管理系统，管理员通过TCM对TC进行日常管理，例如批量对TC下电，批量进行系统更新</td>
 </tr>
 <tr>
 <td>vLB（虚拟负载均衡）</td>
 <td>Virtual  Load Balance</td>
-<td>虚拟负载均衡 ，动态负载WI</td>
+<td>虚拟负载均衡 ，动态负载WI<br />在用户访问WI时，进行负载均衡，避免大量用户访问到同一个WI。</td>
 </tr>
 <tr>
 <td>vAG  （虚拟接入网关）</td>
 <td>Virtual  Access Gateway</td>
-<td>虚拟接入网关 <br />提供安全功能，让TC和VM无法直接传输，需要VAG转发</td>
+<td>虚拟接入网关 <br />提供安全功能，让TC和VM无法直接传输，需要VAG转发<br />桌面接入网关和自主维护网关，当用户无法通过桌面协议登入到虚拟机，可通过VAG自主维护</td>
 </tr>
 <tr>
 <td>SVN  （安全专用网络）</td>
 <td>Security  VPN</td>
-<td>华为安全网关与负载均衡产品 <br />以物理设备方式提供了安全网关功能（VAG）和负载均衡的功能（VLB）</td>
+<td>华为安全网关与负载均衡产品 <br />以物理设备方式提供了安全网关功能（VAG）和负载均衡的功能（VLB）<br /></td>
 </tr>
 <tr>
 <td><strong>WI</strong></td>
-<td>Web  Interface</td>
-<td>用户门户接口，用户接入虚拟机接口</td>
+<td>Web  Interface（web接口）</td>
+<td>用户门户接口，用户接入虚拟机接口<br />用户发起请求时，将登入信息转发盗AD验证，验证通过后，WI将HDC提供的虚拟机列表给用户，提供那个入口</td>
 </tr>
 <tr>
 <td>HDA</td>
@@ -493,7 +530,13 @@
 <td>Soft  Client</td>
 <td>软客户端</td>
 </tr>
+<tr>
+<td>UNS</td>
+<td>统一名称服务</td>
+<td>用户通过一个域名去访问不同套FusionAccess下的WI，用户不需要进行频繁的跳转。</td>
+</tr>
 </tbody></table>
+<p><img src="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/FA%E5%85%A8%E6%99%AF%E5%9B%BE.png" srcset="/img/loading.gif" lazyload></p>
 <h4 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h4><p>ITA（IT 资源管理）</p>
 <p>HDC（华为桌面控制器）</p>
 <p>DB（GuassDB）高斯数据库</p>
@@ -504,6 +547,7 @@
 <p>DNS（域名解析服务器）可以把域名与 IP 地址进行绑定，使得用户可以根据域名进行登陆和寻找桌面服务器<br>            （用于记录域名和 IP 地址的绑定信息）</p>
 <p>DHCP（动态主机控制协议）为桌面分配 IP 地址和网络信息（如：网关、DNS 服务器信息、租约等）<br>            减少用户手工配置 IP 地址导致的 IP 地址冲突问题，减轻管理员配置（例如修改配置时，可以通过网络下发）<br>            可以动态的利用地址池，提高 IP 利用率</p>
 <p><img src="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/FA.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>​        </p>
 
             </div>
             <hr>
