@@ -25,8 +25,12 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/FC-%E5%AD%98%E5%82%A8.jpg">
 <meta property="og:image" content="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/FC-VIMS.jpg">
+<meta property="og:image" content="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/upEiObFwZttgZopvfpJNSQ.png">
+<meta property="og:image" content="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/pvg8yupERSGEgRv1fEE9PA.png">
+<meta property="og:image" content="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/zJmaL--65HSNyZEqz72oYQ.png">
 <meta property="og:image" content="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/FA%E5%85%A8%E6%99%AF%E5%9B%BE.png">
 <meta property="og:image" content="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/FA.jpg">
+<meta property="og:image" content="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/1953408-20210425210756972-432539087.png">
 <meta property="article:published_time" content="2022-03-06T00:04:06.000Z">
 <meta property="article:modified_time" content="1970-01-01T00:00:00.001Z">
 <meta property="article:author" content="John Doe">
@@ -202,7 +206,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      12k 字
+      13k 字
     </span>
   
 
@@ -211,7 +215,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      96 分钟
+      105 分钟
     </span>
   
 
@@ -369,6 +373,10 @@
 <h2 id="FC-Fusioncompute"><a href="#FC-Fusioncompute" class="headerlink" title="FC    Fusioncompute"></a>FC    Fusioncompute</h2><h3 id="CNA-（只能部署在物理服务器上）"><a href="#CNA-（只能部署在物理服务器上）" class="headerlink" title="CNA    （只能部署在物理服务器上）"></a>CNA    （只能部署在物理服务器上）</h3><p>​            UVP：对服务器资源进行虚拟化，是一个虚拟化软件<br>​            VNA：管理虚拟化资源（可以对虚拟化资源进行调用和配置）</p>
 <h3 id="VRM-（VRM-可以部署在-VM-之上，或者物理服务器）"><a href="#VRM-（VRM-可以部署在-VM-之上，或者物理服务器）" class="headerlink" title="VRM    （VRM 可以部署在 VM 之上，或者物理服务器）"></a>VRM    （VRM 可以部署在 VM 之上，或者物理服务器）</h3><p>​            可以对 CNA 主机进行统一管理<br>​            可以进行对 CNA 主机集群管理<br>​            修改用户权限<br>​            通过该平台分配资源等</p>
 <h3 id="CPU虚拟化"><a href="#CPU虚拟化" class="headerlink" title="CPU虚拟化"></a>CPU虚拟化</h3><p>上面的虚拟化部分<br>FC使用的是KVM</p>
+<h3 id="网络平面"><a href="#网络平面" class="headerlink" title="网络平面"></a>网络平面</h3><p>管理平面：承载管理流量的网络，登录FusionCompute界面，VRM与CNA之间的交互等等</p>
+<p>业务平面：承载业务流量的网络，外部用户访问应用的网络</p>
+<p>存储平面：承载存储流量的网络，服务器使用外部存储的网络</p>
+<p>BMC平面：承载对服务器的远程管理控制的网络</p>
 <h3 id="内存虚拟化"><a href="#内存虚拟化" class="headerlink" title="内存虚拟化"></a>内存虚拟化</h3><p><strong>内存大页</strong>（THB）：支持 2M 的内存页，内存页越大所需要描述的内存页表就越少，寻找内存地址的时候就越快</p>
 <p><strong>MMU</strong>：把虚拟内存地址映射给物理内存地址的工具（例如：使用 HVA 地址，需要把地址中的映射和索引关系，找到物理内存地址的具体位置）<br>             如果使用物理内存地址之前，每一次都需要这样寻址，会很耗费计算资源，所以就使用 TLB 来进行记录</p>
 <p><strong>TLB</strong>：缓存虚拟内存地址和物理内存地址映射关系的表格。当应用使用物理内存时，就先通过 TLB 中寻找对应记录，如果有则直接映射<br>            如果没有（未击中 TLB）则会通过 MMU 重新进行映射</p>
@@ -397,14 +405,40 @@
 <h5 id="VIMS-心跳"><a href="#VIMS-心跳" class="headerlink" title="VIMS 心跳"></a>VIMS 心跳</h5><p>分为网络心跳和硬盘心跳</p>
 <h4 id="磁盘技术"><a href="#磁盘技术" class="headerlink" title="磁盘技术"></a>磁盘技术</h4><p>​        普通磁盘<br>​        普通延迟置零磁盘<br>​        精简磁盘<br>​        差分磁盘</p>
 <p>从数据安全性上又划分为：<br>        持久化<br>        非持久化</p>
-<h4 id="快照"><a href="#快照" class="headerlink" title="快照"></a>快照</h4><h2 id="FusionStorage"><a href="#FusionStorage" class="headerlink" title="FusionStorage"></a>FusionStorage</h2><h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><p>FSM（FusionStorage Manager）：FusionStorage管理模块，提供告警、监控、日志、配置等操作维护功能。可支持物理服务器或者虚拟机部署，一般情况下FSM主备虚拟机部署。</p>
-<p>FSA（FusionStorage Agent）：代理进程，部署在各节点上，实现各节点与FSM通信。FSA包含MDC、VBS和OSD等不同的进程。根据系统不同配置要求，分别在不同的节点上启用不同的进程组合来完成特定的功能。</p>
-<p>MDC:Metadata Controller，为元数据控制组件，实现对分布式集群的状态控制，以及控制数据分布规则、数据重建规则等。<br>        分为控制集群和存储集群。<br>        ZK（分布式服务框架）：可以存储在系统分区和磁盘。MDC主备管理、数据存储、数据同步。</p>
-<p>VBS:Virtual Block Service，VBS通过SCSI或iSCSI接口提供分布式存储接入点服务，使应用服务器能够通过VBS访问分布式存储资源。</p>
-<p>OSD：Object Storage Service，其功能是监控硬盘状态，并处理VBS下发的IO消息，进行数据冗余保护并持久化到存储介质中。默认情况下一块硬盘对应一个OSD，假如采用一块容量为2.4T的SSD卡作为存储介质，此时只部署一个OSD对对接该SSD卡，会出现什么问题？会出现资源浪费的问题，如何解决该问题？可以通过部署多个OSD来充分发挥SSD卡的性能，比如部署6个OSD，每个OSD负责管理400GB的存储空间。</p>
-<p>EDS：Enterprise Data Service，提供快照、重删、复制等企业级特性的服务。加入存储池的服务器上会启动EDS进程。</p>
-<p>CM：Cluster Manager，集群管理进程，用于管理控制集群信息。当创建控制集群时，启动CM进程</p>
-<p>CCDB：Cluster Configuration Database，集群配置数据库，存储集群的配置信息（如双活Pair、远程复制Pair和一致性组信息）。</p>
+<h4 id="快照"><a href="#快照" class="headerlink" title="快照"></a>快照</h4><h2 id="FusionStorage"><a href="#FusionStorage" class="headerlink" title="FusionStorage"></a>FusionStorage</h2><ol>
+<li>分布式块存储产品；</li>
+<li>通过存储系统软件将服务器的本地存储资源组织起来，构建全分布式存储池；</li>
+<li>通过SCSI和iSCSI接口向上层应用提供块存储服务；</li>
+<li>满足云资源池及数据库等场景的存储需求。</li>
+</ol>
+<h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><p><strong>FSM</strong>（FusionStorage Manager）：FusionStorage管理模块，提供告警、监控、日志、配置等操作维护功能。可支持物理服务器或者虚拟机部署，一般情况下FSM主备虚拟机部署。</p>
+<p><strong>FSA</strong>（FusionStorage Agent）：代理进程，部署在各节点上，实现各节点与FSM通信。FSA包含MDC、VBS和OSD等不同的进程。根据系统不同配置要求，分别在不同的节点上启用不同的进程组合来完成特定的功能。</p>
+<p><strong>MDC</strong>:Metadata Controller，为元数据控制组件，实现对分布式集群的状态控制，以及控制数据分布规则、数据重建规则等。<br>        分为控制集群和存储集群。<br>        ZK（分布式服务框架）：可以存储在系统分区和磁盘。MDC主备管理、数据存储、数据同步。</p>
+<p><strong>VBS</strong>:Virtual Block Service，VBS通过SCSI或iSCSI接口提供分布式存储接入点服务，使应用服务器能够通过VBS访问分布式存储资源。</p>
+<p><strong>OSD</strong>：Object Storage Service，其功能是监控硬盘状态，并处理VBS下发的IO消息，进行数据冗余保护并持久化到存储介质中。默认情况下一块硬盘对应一个OSD，假如采用一块容量为2.4T的SSD卡作为存储介质，此时只部署一个OSD对对接该SSD卡，会出现什么问题？会出现资源浪费的问题，如何解决该问题？可以通过部署多个OSD来充分发挥SSD卡的性能，比如部署6个OSD，每个OSD负责管理400GB的存储空间。</p>
+<p><strong>EDS</strong>：Enterprise Data Service，提供快照、重删、复制等企业级特性的服务。加入存储池的服务器上会启动EDS进程。</p>
+<p><strong>CM</strong>：Cluster Manager，集群管理进程，用于管理控制集群信息。当创建控制集群时，启动CM进程</p>
+<p><strong>CCDB</strong>：Cluster Configuration Database，集群配置数据库，存储集群的配置信息（如双活Pair、远程复制Pair和一致性组信息）。</p>
+<h3 id="FusionStorage组件交互"><a href="#FusionStorage组件交互" class="headerlink" title="FusionStorage组件交互"></a>FusionStorage组件交互</h3><p><img src="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/upEiObFwZttgZopvfpJNSQ.png" srcset="/img/loading.gif" lazyload></p>
+<ol>
+<li>ZK选主：投票的机制，票数最多的即为主ZK</li>
+<li>MDC选主：启动时会找主ZK注册选主，最先找到主ZK注册的即为主MDC，主MDC通过心跳机制监控其他MDC的状态，当发现归属MDC故障时，会选择其他正常的归属MDC来接管该存储池；当控制集群中的MDC发现主MDC故障时，会重新触发选主机制；控制集群中的MDC也具备归属MDC管理存储池的功能</li>
+<li>OSD启动时会通过MDC配置文件找到归属MDC，并向归属MDC报告状态，归属MDC再将状态同步至VBS</li>
+<li>VBS启动时会向主MDC确定自己是否为Leader VBS，OSD会将元数据信息（卷的名称、大小、ID等）同步至Leader VBS，Leader VBS再将其同步至其他VBS；无论是Leader VBS还是其他VBS，都会向主MDC获取IO View</li>
+</ol>
+<h3 id="FusionStorage基础概念"><a href="#FusionStorage基础概念" class="headerlink" title="FusionStorage基础概念"></a><strong>FusionStorage基础概念</strong></h3><p>资源池：FusionStorage中一组硬盘构成的存储池。</p>
+<p>Volume：应用卷，代表了FusionStorage向上层呈现的一个逻辑存储单元。</p>
+<p>DHT： Distributed Hash Table，FusionStorage中指数据路由算法</p>
+<p>Partition：代表了一块数据分区，DHT环上的固定Hash段代表的数据区</p>
+<p>Key-Value：底层磁盘上的数据组织成Key-Value的形式，每个Value代表一个块存储空间</p>
+<p><img src="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/pvg8yupERSGEgRv1fEE9PA.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="网络平面-1"><a href="#网络平面-1" class="headerlink" title="网络平面"></a>网络平面</h3><p>管理平面：与用户管理网络对接的平面，用于进行系统管理和维护；维护人员-FSM，FSM-FSA</p>
+<p>BMC平面：用于接入管理节点/存储节点Mgmt接口，提供远程硬件设备管理功能；</p>
+<p>存储平面：内部平面，用于系统内部所有节点之间的业务数据通信；REP-VBS-OSD-MDC-ZK</p>
+<p>业务平面：与客户应用对接，通过iSCSI/SCSI等标准协议访问存储；APP-VBS</p>
+<p>复制平面：用于复制节点间进行数据同步复制；REP-REP</p>
+<p>仲裁平面：用于与双活仲裁服务器进行通信，只有块服务规划双活功能时才会规划该平面；REP-第三方仲裁服务器</p>
+<p><img src="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/zJmaL--65HSNyZEqz72oYQ.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h3><h4 id="存储资源"><a href="#存储资源" class="headerlink" title="存储资源"></a>存储资源</h4><p>能够提供存储空间的物理服务器（例如：IP SAN 存储服务器）华为的：FusionStorage（分布式存储）、OceanStor， 存储资源不能直接给 CNA 主机去使用，需要进行存储空间的管理和划分。</p>
 <ol>
 <li>创建硬盘域（把硬盘集合在一起）</li>
@@ -547,6 +581,7 @@
 <p>DNS（域名解析服务器）可以把域名与 IP 地址进行绑定，使得用户可以根据域名进行登陆和寻找桌面服务器<br>            （用于记录域名和 IP 地址的绑定信息）</p>
 <p>DHCP（动态主机控制协议）为桌面分配 IP 地址和网络信息（如：网关、DNS 服务器信息、租约等）<br>            减少用户手工配置 IP 地址导致的 IP 地址冲突问题，减轻管理员配置（例如修改配置时，可以通过网络下发）<br>            可以动态的利用地址池，提高 IP 利用率</p>
 <p><img src="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/FA.jpg" srcset="/img/loading.gif" lazyload></p>
+<h3 id="桌面发放"><a href="#桌面发放" class="headerlink" title="桌面发放"></a>桌面发放</h3><p><img src="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/1953408-20210425210756972-432539087.png" srcset="/img/loading.gif" lazyload></p>
 <p>​        </p>
 
             </div>
