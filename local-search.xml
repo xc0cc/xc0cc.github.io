@@ -4,33 +4,6 @@
   
   
   <entry>
-    <title>html网页设计记录</title>
-    <link href="/2022/03/19/html%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E8%AE%B0%E5%BD%95/"/>
-    <url>/2022/03/19/html%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E8%AE%B0%E5%BD%95/</url>
-    
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>wow,只是上课笔记</p><span id="more"></span><h1 id="head"><a href="#head" class="headerlink" title="head"></a>head</h1><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p><code>&lt;title&gt;测试&lt;/title&gt;</code></p><p>引入分为三种</p><p>头部</p><p><code>&lt;style type=&quot;text/css&quot;&gt;     div｛｝</code></p><p>外部</p><p><code>&lt;link rel=&quot;&quot; type=&quot;text/css&quot; href=&quot;aa.css&quot;/&gt;</code></p><p>标签</p><p><code>&lt;div style=&quot;width: 100px;height: 100px,border: 1px solid red;&quot;&gt;&lt;/div&gt; </code></p><h1 id="body"><a href="#body" class="headerlink" title="body"></a>body</h1><h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>cellpadding 单元格 边框<br>cellspacing 单元格 单元格<br>rowspan 跨行<br>colspan 跨列 </p><p>`<p><b>这是第一段</b></p></p><div class="code-wrapper"><pre><code class="hljs">    &lt;p&gt;这是p&lt;/p&gt;    &lt;div&gt;这是div&lt;/div&gt;    &lt;h1&gt;11&lt;/h1&gt;    &lt;h2&gt;22&lt;/h2&gt;    &lt;h3&gt;33&lt;/h3&gt;    &lt;h4&gt;44&lt;/h4&gt;    &lt;h5&gt;55&lt;/h5&gt;    &lt;h6&gt;66&lt;/h6&gt;    &lt;hr&gt;    &lt;!-- 有序列表 --&gt;    &lt;ol&gt;        &lt;li&gt;111&lt;/li&gt;        &lt;li&gt;222&lt;/li&gt;        &lt;li&gt;333&lt;/li&gt;    &lt;/ol&gt;    &lt;!-- 无序列表 --&gt;    &lt;ul&gt;        &lt;li&gt;111&lt;/li&gt;        &lt;li&gt;222&lt;/li&gt;        &lt;li&gt;333&lt;/li&gt;    &lt;/ul&gt;    &lt;/div&gt;    &lt;!-- 图片 --&gt;    本地路径    &lt;br&gt;    &lt;img src=&quot;img/HOME.jpg&quot; alt=&quot;HOME.jpg&quot; width=&quot;1000&quot;&gt;    &lt;form&gt;    &lt;br&gt;    账号：&lt;input type=&quot;name&quot; name=&quot;name&quot;&gt;    &lt;br&gt;    密码：&lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;    &lt;br&gt;    按钮：&lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;male&quot;&gt;按钮`</code></pre></div><h2 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h2><p>.box{<br>                width: 100px;<br>                height: 100px;<br>                border: 10px solid red;<br>                /* 默认大小：16px 1em=16px <em>/<br>                font-size: 2em;<br>                /</em> 字体 <em>/<br>                /</em> font-family: ‘黑体’; <em>/<br>                /</em> 斜体 <em>/<br>                /</em> font-style: italic; <em>/<br>                /</em> 加粗 <em>/<br>                /</em> font-weight: bold; <em>/<br>                /</em> 复合写法 <em>/<br>                /</em> font: bold 32px ‘黑体’; <em>/<br>                /</em> 单行文本垂直居中 <em>/<br>                line-height: 100px;<br>                /</em> 水平居中 <em>/<br>                text-align: center;<br>                /</em> background:(图片); no-repeat*/<br>            }</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>其他</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>html,css</tag>
-      
-      <tag>js</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>云计算</title>
     <link href="/2022/03/06/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
     <url>/2022/03/06/%E4%BA%91%E8%AE%A1%E7%AE%97/</url>
