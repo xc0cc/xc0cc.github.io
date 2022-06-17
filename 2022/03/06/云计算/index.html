@@ -26,6 +26,7 @@
 <meta property="og:image" content="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/FC-%E5%AD%98%E5%82%A8.jpg">
 <meta property="og:image" content="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/FC-VIMS.jpg">
 <meta property="og:image" content="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/upEiObFwZttgZopvfpJNSQ.png">
+<meta property="og:image" content="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/1959283-20210925131523717-1002511513.png">
 <meta property="og:image" content="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/pvg8yupERSGEgRv1fEE9PA.png">
 <meta property="og:image" content="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/zJmaL--65HSNyZEqz72oYQ.png">
 <meta property="og:image" content="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/FA%E5%85%A8%E6%99%AF%E5%9B%BE.png">
@@ -215,7 +216,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      105 分钟
+      107 分钟
     </span>
   
 
@@ -426,6 +427,9 @@
 <li>OSD启动时会通过MDC配置文件找到归属MDC，并向归属MDC报告状态，归属MDC再将状态同步至VBS</li>
 <li>VBS启动时会向主MDC确定自己是否为Leader VBS，OSD会将元数据信息（卷的名称、大小、ID等）同步至Leader VBS，Leader VBS再将其同步至其他VBS；无论是Leader VBS还是其他VBS，都会向主MDC获取IO View</li>
 </ol>
+<p><img src="https://tuchuang-1308973922.cos.ap-guangzhou.myqcloud.com/CLOUD/1959283-20210925131523717-1002511513.png" srcset="/img/loading.gif" lazyload></p>
+<p>控制集群的<strong>MDC</strong>找主ZK选主，先注册为主MDC，其他为备，主MDC挂了，重新选举。<br>主备之间MDC维持心跳关系，由主MDC决定谁为归属MDC，并告知其所管属的存储池（最多2个存储池），并决定归属MDC下线后的接替者。</p>
+<p><strong>OSD</strong> 启动时，向 主MDC 查询归属 MDC，向归属 MDC 汇报自己的状态 归属 MDC 把状态发送给 VBS。<br>OSD 与归属 MDC 维持心跳关系，默认每秒向MDC汇报OSD的状态，若是5秒内没有收到OSD的心跳，MDC会认为OSD故障，MDC将该OSD踢出存储池，更新 OSD View 到每个 OSD，更新 IO View 给 VBS， 在 5min 未收到心跳则进行数据重建。</p>
 <h3 id="FusionStorage基础概念"><a href="#FusionStorage基础概念" class="headerlink" title="FusionStorage基础概念"></a><strong>FusionStorage基础概念</strong></h3><p>资源池：FusionStorage中一组硬盘构成的存储池。</p>
 <p>Volume：应用卷，代表了FusionStorage向上层呈现的一个逻辑存储单元。</p>
 <p>DHT： Distributed Hash Table，FusionStorage中指数据路由算法</p>
