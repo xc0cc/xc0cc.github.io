@@ -1,0 +1,908 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/2026-06-12_234442_496.jpg">
+  <link rel="icon" href="/images/2026-06-12_234442_496.jpg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="在23年出GPT3.5爆火到26年中一些发展。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI应用的一些发展">
+<meta property="og:url" content="http://example.com/2026/05/27/20260527/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="在23年出GPT3.5爆火到26年中一些发展。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/posts/20260527/1781278025418-image.png">
+<meta property="article:published_time" content="2026-05-26T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-06-12T15:27:17.473Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="开发">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/images/posts/20260527/1781278025418-image.png">
+  
+  
+  
+  <title>AI应用的一些发展 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content (desktop) -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile grid menu overlay -->
+<div id="mobile-grid-menu" class="d-lg-none">
+  <div class="mobile-grid-menu-inner">
+    <div class="container">
+      <div class="row">
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-home-fill"></i>
+                  <span>首页</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/archives/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-archive-fill"></i>
+                  <span>归档</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/categories/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-category-fill"></i>
+                  <span>分类</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/tags/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-tags-fill"></i>
+                  <span>标签</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/about/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-user-fill"></i>
+                  <span>关于</span>
+                </div>
+              </a>
+            </div>
+          
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-search-btn">
+            <a href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-search"></i>
+                <span>搜索</span>
+              </div>
+            </a>
+          </div>
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-color-toggle-btn"
+               data-label-light="开灯"
+               data-label-dark="关灯">
+            <a href="javascript:;" aria-label="Color Toggle">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-dark" id="mobile-color-toggle-icon"></i>
+                <span id="mobile-color-toggle-label">关灯</span>
+              </div>
+            </a>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/images/posts/20260527/1781278025418-image.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="AI应用的一些发展"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-05-27 00:00" pubdate>
+          2026年5月27日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          41 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">AI应用的一些发展</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="AI-是怎么一步步”长脑子”的：从-Transformer-到-Harness-Engineering"><a href="#AI-是怎么一步步”长脑子”的：从-Transformer-到-Harness-Engineering" class="headerlink" title="AI 是怎么一步步”长脑子”的：从 Transformer 到 Harness Engineering"></a>AI 是怎么一步步”长脑子”的：从 Transformer 到 Harness Engineering</h1><blockquote>
+<p><strong>参考说明</strong>：本文的时间线框架参考了<a target="_blank" rel="noopener" href="https://oigi8odzc5w.feishu.cn/wiki/WBMfwiNkfi6uNFkRtXdcavDzn0e">《从 LLM 到 Agent》飞书文档</a>中整理的 AI 发展脉络，结合自己的记忆和理解重新描述。感谢原作者的梳理工作。</p>
+</blockquote>
+<p>最近几年 AI 发展太快了，新概念一个接一个往外蹦——Prompt Engineering、RAG、Agent、MCP、Agent Skill……单个看好像都懂，但串起来是什么关系？</p>
+<p>这篇文章把 AI 从 GPT-3.5 爆火到现在的演进脉络串一遍。12 个节点，每个都在解决上一个没搞定的问题。</p>
+<blockquote>
+<p><strong>Key Takeaways</strong></p>
+<ul>
+<li>Transformer 的 Decoder-Only 路线是今天所有主流大模型的底层骨架</li>
+<li>GPT-3.5 时代，一套好 Prompt 能卖钱，吴恩达的免费课被转疯</li>
+<li>LoRA 先在 Stable Diffusion 绘画圈火起来，Civitai 上至今有上万个社区 LoRA，后来才普及到 LLM</li>
+<li>Agent &#x3D; Prompt + LLM + Tools，最简 Agent 几十行代码就能跑</li>
+<li>离职的同事终将化作温暖的 Skill——Agent Skill 让 SOP 可沉淀、可复用</li>
+<li>Harness Engineering 是最后一环：不是让 AI 更强，而是给它套上缰绳</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="1-LLM——Transformer-铺的路"><a href="#1-LLM——Transformer-铺的路" class="headerlink" title="1. LLM——Transformer 铺的路"></a><strong>1. LLM——Transformer 铺的路</strong></h2><p>2017 年 Google 发了篇论文叫 <strong>《Attention Is All You Need》</strong>，提出了 Transformer 架构。核心想法是”注意力机制”——模型处理每个词的时候，不再只看前后几个词，而是直接关注整句话里所有跟它相关的词。并行计算、效率高、长文本也 hold 住。</p>
+<p>GPT 系列选了 <strong>Decoder-Only</strong>（只用解码器）这条路线，专注做一件事：给定上文，预测下一个词。这个选择决定了现在 ChatGPT、Claude 这些主流模型的底层骨架。</p>
+<blockquote>
+<p>关于 Transformer 的底层细节这里不展开了。只需要知道：现在所有主流大模型，底层都是 Decoder-Only 的 Transformer 变体。</p>
+</blockquote>
+<hr>
+<h2 id="2-Prompt-Engineering——GPT-3-5-时代最火的技能"><a href="#2-Prompt-Engineering——GPT-3-5-时代最火的技能" class="headerlink" title="2. Prompt Engineering——GPT-3.5 时代最火的技能"></a><strong>2. Prompt Engineering——GPT-3.5 时代最火的技能</strong></h2><p>ChatGPT（GPT-3.5）爆火那阵，Prompt Engineering 是第一个出圈的概念。</p>
+<p>原因很简单：同样的模型，问法不同，答案天差地别。问”介绍一下法国大革命”，跟问”用 200 字以内概括法国大革命的起因、经过、结果”，产出的质量完全不是一个级别。</p>
+<p>那段时间特别疯狂——<strong>一套好的提示词模板是可以卖钱的</strong>。社交媒体上到处是”这 10 个 Prompt 让你效率翻倍”的帖子，PromptBase 这类交易平台也冒了出来。吴恩达（Andrew Ng）还跟 OpenAI 合作出了门免费的 Prompt Engineering 课程，那门课在当时被转疯了。</p>
+<p>Prompt 分两种：<strong>系统提示词</strong>设定人设和规则，全程生效；<strong>用户提示词</strong>是每条具体问题的输入。</p>
+<p>核心洞察很简单但很深刻：<strong>不用改模型参数，只靠优化输入就能显著提升效果</strong>。成本极低，ROI 极高。</p>
+<p>不过热潮过后也冷静了——光靠 Prompt 有上限，复杂场景还是不够稳定。所以才有了后面的 Fine-tuning。</p>
+<hr>
+<h2 id="3-Fine-tuning——Prompt-搞不定了，动参数"><a href="#3-Fine-tuning——Prompt-搞不定了，动参数" class="headerlink" title="3. Fine-tuning——Prompt 搞不定了，动参数"></a><strong>3. Fine-tuning——Prompt 搞不定了，动参数</strong></h2><p>Prompt 再强，碰到特定领域术语、固定格式输出、某种风格的一致性，光靠提示词很难稳定复现。那就得动模型本身。</p>
+<p>**微调（Fine-tuning）**就是在预训练好的大模型基础上，用特定数据再训一轮，让模型对这个任务更擅长。</p>
+<p>但全量微调太贵，大模型参数动辄几百 B。**LoRA（Low-Rank Adaptation）**解决了这个问题：不碰原始参数，只在旁边挂几个低秩矩阵来训练，参数量少好几个数量级，效果却不差。</p>
+<p>LoRA 其实先在 <strong>Stable Diffusion 绘画圈</strong>火起来的——用几张照片训一个 LoRA，就能生成各种风格的自画像；用某个画风的作品集训一个 LoRA，Stable Diffusion 就能稳定出那种风格的图。C 站（Civitai）上至今有成千上万个社区训好的 LoRA 可下载。后来 LoRA 才在 LLM 领域普及，成为微调的主流方案。</p>
+<blockquote>
+<p>Prompt 是让模型用现有智力解新题，Fine-tuning 是给模型补课。</p>
+</blockquote>
+<hr>
+<h2 id="4-RAG——模型记性不好，配个”外挂知识库”"><a href="#4-RAG——模型记性不好，配个”外挂知识库”" class="headerlink" title="4. RAG——模型记性不好，配个”外挂知识库”"></a><strong>4. RAG——模型记性不好，配个”外挂知识库”</strong></h2><p>大模型有个致命问题：<strong>训练数据有截止日期</strong>。问”昨天发生了什么”不知道，而且训练数据里的错误会被模型一本正经地复述出来。</p>
+<p>RAG（Retrieval-Augmented Generation）的思路很直接：<strong>先查资料，再回答问题</strong>。</p>
+<p>流程：用户提问 → 去外部知识库检索相关内容 → 把检索结果拼到 Prompt 里 → 模型基于这些材料生成回答。模型不再全凭”记忆”，而是拿着”参考资料”说话。准确性、时效性两个痛点同时解决。</p>
+<hr>
+<h2 id="5-Function-Calling——光会说不够，得会做事"><a href="#5-Function-Calling——光会说不够，得会做事" class="headerlink" title="5. Function Calling——光会说不够，得会做事"></a><strong>5. Function Calling——光会说不够，得会做事</strong></h2><p>前面的模型再强，也只能输出文字。现实世界需要模型查数据库、发邮件、调日历……光靠文本输出搞不定。</p>
+<p><strong>Function Calling</strong> 让模型学会”调用工具”。用户说”查明天北京天气”，模型不会直接查天气，但输出一个结构化调用指令——<code>{&quot;function&quot;: &quot;get_weather&quot;, &quot;city&quot;: &quot;北京&quot;, &quot;date&quot;: &quot;2026-05-27&quot;}</code>。外部系统收到指令，真的去调天气 API，把返回结果再喂给模型，模型组织语言回复。</p>
+<p>Function Calling 是重要转折——<strong>从”会说话的机器”变成了”会用工具的助手”</strong>。</p>
+<hr>
+<h2 id="6-MCP——工具太多太乱，需要”USB-标准”"><a href="#6-MCP——工具太多太乱，需要”USB-标准”" class="headerlink" title="6. MCP——工具太多太乱，需要”USB 标准”"></a><strong>6. MCP——工具太多太乱，需要”USB 标准”</strong></h2><p>Function Calling 之后，新问题很快暴露：每个模型、每个应用都要单独对接工具，换模型就得重写。生态碎片化严重。</p>
+<p>**MCP（Model Context Protocol）**是 Anthropic 在 2024 年底提出的标准化协议。定义了统一接口规范——大模型怎么发现工具有哪些能力、怎么调用、怎么拿到结果。开发者按这套协议写一个 MCP Server，任何支持 MCP 的 AI 应用都能直接用。</p>
+<p>就好比 USB 之前每种设备有专属接口，MCP 是 AI 工具生态的”USB 标准”。</p>
+<hr>
+<h2 id="7-Agent——从”一问一答”到”自己干活”"><a href="#7-Agent——从”一问一答”到”自己干活”" class="headerlink" title="7. Agent——从”一问一答”到”自己干活”"></a><strong>7. Agent——从”一问一答”到”自己干活”</strong></h2><p>前面的技术都在解决”单次问答”场景。但很多任务不是一次能搞定的。早期有个叫 AutoGPT 的项目，用 GPT-3.5 反复跑循环，当时挺轰动，现在回头看效果一般——但思路是对的。</p>
+<p><strong>Agent</strong>的核心是一个循环：<strong>思考 → 行动 → 观察 → 再思考 → ……</strong></p>
+<p>比如”调研竞品 X 的最新动态”——Agent 不是直接回答，而是自己规划：搜索关键词 → 筛选结果 → 信息不够 → 换关键词再搜 → 交叉验证 → 整理报告。每一步依赖上一步的输出。</p>
+<p>本质很简单：<strong>Prompt + LLM + Tools &#x3D; Agent</strong>。提示词给目标和约束，LLM 负责推理决策，Tools 负责执行。最简 Agent 就几十行代码——一个 while 循环，把工具返回的结果不断喂回模型。</p>
+<hr>
+<h2 id="8-Multi-Agent——一个人搞不定，组队"><a href="#8-Multi-Agent——一个人搞不定，组队" class="headerlink" title="8. Multi-Agent——一个人搞不定，组队"></a><strong>8. Multi-Agent——一个人搞不定，组队</strong></h2><p>单 Agent 很快遇到瓶颈：任务太复杂、上下文太长、不同子任务需要不同能力。</p>
+<p><strong>Multi-Agent</strong>的思路：<strong>把任务拆了，不同 Agent 各管一摊</strong>——产品经理 Agent 梳理需求、开发 Agent 写代码、测试 Agent 找 Bug，各自有独立上下文和专长。像现在的 Claude Code、Codex 都内置了这种多 Agent 协作能力。</p>
+<p>但这个方向有坑：多个 Agent 互相对话，Token 消耗暴涨；协作路径变复杂，出问题难定位。所以 <strong>只有在任务天然可拆分成独立子任务时才上 Multi-Agent，别为了多而多</strong>。</p>
+<hr>
+<h2 id="9-Context-Engineering——上下文决定-Agent-上限"><a href="#9-Context-Engineering——上下文决定-Agent-上限" class="headerlink" title="9. Context Engineering——上下文决定 Agent 上限"></a><strong>9. Context Engineering——上下文决定 Agent 上限</strong></h2><p>Agent 在循环中不断积累信息：对话历史、工具返回结果、中间推理步骤、背景知识……全得塞进 LLM 的上下文窗口。窗口有限，信息越多模型越可能”看漏”关键内容。</p>
+<p>**Context Engineering（上下文工程）**就是解决这个的：怎么筛、怎么压、怎么排，让有限窗口装下最有价值的信息。比如对长对话做摘要压缩、按重要性排序插入上下文、用文件系统做”外部记忆”。</p>
+<p>很多时候模型不是不够聪明，是”看到”的东西质量太差。上下文工程是 Agent 从”能用”到”好用”的关键。</p>
+<hr>
+<h2 id="10-Agent-Skill——把能力打包，像装-App-一样"><a href="#10-Agent-Skill——把能力打包，像装-App-一样" class="headerlink" title="10. Agent Skill——把能力打包，像装 App 一样"></a><strong>10. Agent Skill——把能力打包，像装 App 一样</strong></h2><p>Agent 的能力越攒越多，Prompt 越来越长，维护越来越痛苦。而且很多能力是通用的——写了一个”代码审查”的 Agent，别人想复用得从头扒配置。</p>
+<p><strong>Agent Skills</strong> 是 Anthropic 提出的轻量级开放格式。把一整套 Agent 能力——Prompt 指令、工具脚本、知识文件——打包成可复用模块。Agent 运行时按需激活不同 Skill，用到哪个加载哪个（<strong>渐进式披露</strong>），不必把所有能力塞进 Prompt。</p>
+<p>几个关键点：</p>
+<ul>
+<li>Agent Skill 本质是<strong>子 Agent</strong>——装一个 Skill 等于配了一个专业小弟</li>
+<li>特别适合 SOP 沉淀——<strong>离职的同事终将化作温暖的 Skill</strong>，新人装上就用</li>
+<li>agentskills.io 上已有大量社区 Skill</li>
+</ul>
+<p>MCP 标准化了”工具怎么接”，Agent Skills 标准化了”能力怎么打包”，两者互补。</p>
+<hr>
+<h2 id="11-OpenClaw——Agent-不只在聊天框里"><a href="#11-OpenClaw——Agent-不只在聊天框里" class="headerlink" title="11. OpenClaw——Agent 不只在聊天框里"></a><strong>11. OpenClaw——Agent 不只在聊天框里</strong></h2><p>Agent 大多被绑在聊天界面里，主动去找它才能干活。但实际场景希望 Agent 能融入飞书、微信、邮件——像一个真正的助理。</p>
+<p><strong>OpenClaw</strong> 是开源的个人 AI Agent 框架，TypeScript 开发。核心创新是<strong>拓展了 Agent 的交互入口</strong>——不只是网页聊天，还能接入飞书等即时通讯工具。在飞书里发条消息”整理今天会议纪要”，Agent 就去干活，干完回来汇报。</p>
+<p>精简版 <a target="_blank" rel="noopener" href="https://github.com/HKUDS/nanobot">nanobot</a> 代码量更小，适合学习和二次开发。方向很清楚：<strong>从”你得打开聊天框找它”变成”它就在工作流里等着”</strong>。</p>
+<hr>
+<h2 id="12-Harness-Engineering——给-Agent-套上缰绳"><a href="#12-Harness-Engineering——给-Agent-套上缰绳" class="headerlink" title="12. Harness Engineering——给 Agent 套上缰绳"></a><strong>12. Harness Engineering——给 Agent 套上缰绳</strong></h2><p>OpenAI 最近提出的概念。前面 11 个阶段都在解决”怎么让 AI 更强”，但 Harness Engineering 关心的是<strong>怎么让 AI 不乱来</strong>。</p>
+<p>核心思想：给 Agent 构建受控环境——约束机制限制 Agent 能做什么不能做什么、反馈回路让 Agent 出错时自动纠偏、可观测性让每一步有迹可查。</p>
+<p>把 Agent 比作员工：前面在教”怎么做”，Harness Engineering 在教”做对的事，不做错的事”。方向很清楚——<strong>AI 的下一个阶段不是更大更强，而是更可控、更可靠</strong>。</p>
+<hr>
+<h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a><strong>FAQ</strong></h2><h3 id="Agent-和普通-chatbot-到底差在哪？"><a href="#Agent-和普通-chatbot-到底差在哪？" class="headerlink" title="Agent 和普通 chatbot 到底差在哪？"></a><strong>Agent 和普通 chatbot 到底差在哪？</strong></h3><p>Chatbot 是”一问一答”，每次对话独立。Agent 会自己规划步骤、调用工具、根据中间结果调整策略。判断标准：任务需要 3 步以上完成，Chatbot 做不了，Agent 才有可能做。</p>
+<h3 id="该不该追-Multi-Agent？还是单-Agent-够了？"><a href="#该不该追-Multi-Agent？还是单-Agent-够了？" class="headerlink" title="该不该追 Multi-Agent？还是单 Agent 够了？"></a><strong>该不该追 Multi-Agent？还是单 Agent 够了？</strong></h3><p>大部分场景单 Agent 足够。只有发现”上下文太长经常遗漏关键信息”或”任务天然需要不同专长角色协作”时才考虑 Multi-Agent。先做好一个 Agent，别为了多而多。</p>
+<h3 id="这些概念里，哪个对普通开发者影响最大？"><a href="#这些概念里，哪个对普通开发者影响最大？" class="headerlink" title="这些概念里，哪个对普通开发者影响最大？"></a><strong>这些概念里，哪个对普通开发者影响最大？</strong></h3><p>MCP 和 Agent Skill。MCP 让工具一次开发到处用，不再绑死在一个模型上。Agent Skill 让经验和 SOP 沉淀成可复用模块。两个东西把 AI 开发从”手工作坊”变成了”可组装的工厂流水线”。</p>
+<hr>
+<h2 id="串起来看"><a href="#串起来看" class="headerlink" title="串起来看"></a><strong>串起来看</strong></h2><p>12 个阶段，每一环都在解决上一环暴露的瓶颈：</p>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs sqf">LLM（地基）<br>  → Prompt Engineering（低成本引导，不改参数）<br>    → Fine-tuning（动参数，深度定制）<br>      → RAG（补充实时知识，减少幻觉）<br>        → Function Calling（让模型调用外部工具）<br>          → MCP（工具标准化，一次开发到处用）<br>            → <span class="hljs-built_in">Agent</span>（自主循环，不只是问答）<br>              → Multi-<span class="hljs-built_in">Agent</span>（分工协作，拆分复杂度）<br>                → Context Engineering（优化信息供给）<br>                  → <span class="hljs-built_in">Agent</span> <span class="hljs-built_in">Skill</span>（能力模块化，可复用）<br>                    → OpenClaw（拓展入口，融入工作流）<br>                      → Harness Engineering（工程约束，可控可靠）<br></code></pre></td></tr></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%9F%A5%E8%A1%8C%E5%90%88%E4%B8%80/" class="category-chain-item">知行合一</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%BC%80%E5%8F%91/" class="print-no-link">#开发</a>
+      
+        <a href="/tags/AI/" class="print-no-link">#AI</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>AI应用的一些发展</div>
+      <div>http://example.com/2026/05/27/20260527/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年5月27日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2026/05/28/20260528/" title="Anaconda与Jupyter">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Anaconda与Jupyter</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/05/26/20260526/" title="C#基本语法">
+                        <span class="hidden-mobile">C#基本语法</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    function isExpandAllEnabled() {
+      return CONFIG.toc && CONFIG.toc.expand_all === true;
+    }
+    function expandAllToc() {
+      if (!isExpandAllEnabled()) { return; }
+      jQuery('#toc-body .tocbot-is-collapsed').removeClass('tocbot-is-collapsed');
+    }
+    function updateTocToggle($li, $childList) {
+      var $toggle = $li.children('.toc-toggle');
+      if ($toggle.length === 0) { return; }
+      var collapsed = $childList.hasClass('tocbot-is-collapsed');
+      $toggle
+        .toggleClass('toc-toggle-collapsed', collapsed)
+        .toggleClass('toc-toggle-expanded', !collapsed);
+    }
+    function bindTocToggle() {
+      if (!isExpandAllEnabled()) { return; }
+      jQuery('#toc-body .toc-list-item').each(function() {
+        var $li = jQuery(this);
+        var $childList = $li.children('ol');
+        if ($childList.length === 0) {
+          if ($li.children('.toc-toggle').length === 0) {
+            $li.prepend('<span class="toc-toggle toc-toggle-placeholder" aria-hidden="true">›</span>');
+          }
+          return;
+        }
+
+        if ($li.children('.toc-toggle').length === 0) {
+          $li.prepend('<span class="toc-toggle toc-toggle-expanded" aria-hidden="true">›</span>');
+        }
+        updateTocToggle($li, $childList);
+      });
+      jQuery('#toc-body').off('click.tocToggle').on('click.tocToggle', '.toc-toggle', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var $li = jQuery(this).parent('.toc-list-item');
+        var $childList = $li.children('ol');
+        if ($childList.length === 0) { return; }
+        $childList.toggleClass('tocbot-is-collapsed');
+        updateTocToggle($li, $childList);
+      });
+      if (!window.__tocToggleObserver) {
+        window.__tocToggleObserver = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type !== 'attributes' || mutation.attributeName !== 'class') { return; }
+            var $list = jQuery(mutation.target);
+            var $li = $list.parent('.toc-list-item');
+            if ($li.length === 0) { return; }
+            updateTocToggle($li, $list);
+          });
+        });
+        jQuery('#toc-body ol').each(function() {
+          window.__tocToggleObserver.observe(this, { attributes: true });
+        });
+      }
+    }
+    var tocConfig = Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc);
+    if (isExpandAllEnabled()) {
+      tocConfig.collapseDepth = 6;
+    }
+    window.tocbot.init(tocConfig);
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+    expandAllToc();
+    bindTocToggle();
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+        expandAllToc();
+        bindTocToggle();
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
